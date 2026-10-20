@@ -1,35 +1,41 @@
 /// <reference path=".config/sa.d.ts" />
 
+import {WeaponType} from ".config/sa.enums.mts";
+
+/** @type {WeaponType[]} */
 const FIREARMS = [
-    22, // Pistola 9mm
-    23, // Pistola silenciada
-    24, // Desert Eagle
-    25, // Escopeta
-    26, // Recortada
-    27, // Escopeta de combate
-    28, // Micro SMG / Uzi
-    29, // MP5
-    30, // AK-47
-    31, // M4
-    32, // Tec-9
-    33, // Rifle
-    34, // Sniper
-    38  // Minigun
+    WeaponType.Pistol,
+    WeaponType.PistolSilenced,
+    WeaponType.DesertEagle,
+    WeaponType.Shotgun,
+    WeaponType.Sawnoff,
+    WeaponType.Spas12,
+    WeaponType.MicroUzi,
+    WeaponType.Mp5,
+    WeaponType.Ak47,
+    WeaponType.M4,
+    WeaponType.Tec9,
+    WeaponType.Rifle,
+    WeaponType.Sniper,
+    WeaponType.Minigun
 ];
 
 const player = new Player(0);
 const playerChar = player.getChar();
 
 while (true) {
-    wait(0);
+    wait(10);
 
-    if (!player.isDead()) {
-        for (const weapon of FIREARMS) {
-            if (playerChar.hasBeenDamagedByWeapon(weapon)) {
-                playerChar.setHealth(0);
-                break;
-            }
-        }
-        playerChar.clearLastWeaponDamage();
+    if (player.isDead()) {
+        wait(2000);
+        continue;
     }
+
+    for (const weapon of FIREARMS) {
+        if (playerChar.hasBeenDamagedByWeapon(weapon) && playerChar.getArmor() === 0) {
+            playerChar.setHealth(0);
+            break;
+        }
+    }
+    playerChar.clearLastWeaponDamage();
 }
