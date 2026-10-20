@@ -5,3 +5,4 @@ A compilation of my own GTASA mods, used in my playthrough.
 - [oneShotKillPlayerMod](oneShotKillPlayerMod%5Bmem%5D.js): you die with a single gunshot. Damage from melee weapons is not altered.
 - [carEngineOff](carEngineOff.js): exit your car turning off the engine, when exiting by pressing the handbrake + exit buttons at the same time.
 - [enemyFixes](enemyFixes%5Bmem%5D.js): limit accuracy, max health and max armor of NPCs.
+- [aimCameraFix](aimCameraFix%5Bmem%5D.js): when using controller & GInput, when aiming, makes you aim where the camera is pointing, instead of where CJ is looking.
