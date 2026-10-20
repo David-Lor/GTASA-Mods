@@ -6,3 +6,4 @@ A compilation of my own GTASA mods, used in my playthrough.
 - [carEngineOff](carEngineOff.js): exit your car turning off the engine, when exiting by pressing the handbrake + exit buttons at the same time.
 - [enemyFixes](enemyFixes%5Bmem%5D.js): limit accuracy, max health and max armor of NPCs.
 - [aimCameraFix](aimCameraFix%5Bmem%5D.js): when using controller & GInput, when aiming, makes you aim where the camera is pointing, instead of where CJ is looking.
+- [energyDrain](energyDrain.js): reduce the health (a.k.a. energy at the beginning of the game) as time passes. A cheap option of having a hunger mod.
