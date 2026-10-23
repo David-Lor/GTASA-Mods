@@ -3,6 +3,7 @@
 const ENEMY_ACCURACY = 1;  // 0~100, -1=no mod. Lower=worse accuracy.
 const ENEMY_MAX_HEALTH = 200;  // 0=no mod
 const ENEMY_MAX_ARMOR = 200;  // 0=no mod
+const ENEMY_DAMAGEABLE_BY_NPCS = true;  // true=allow any NPC to damage/kill this NPC
 
 const SCAN_RADIUS = 300.0;
 const SCAN_INTERVAL = 250;
@@ -30,12 +31,12 @@ function loop() {
 
         processedPeds.push(ped);
 
-        // Limitar precisión
+        // Limit accuracy
         if (ENEMY_ACCURACY >= 0) {
             ped.setAccuracy(ENEMY_ACCURACY);
         }
 
-        // Limitar vida máxima
+        // Limit health
         if (ENEMY_MAX_HEALTH > 0) {
             if (ped.getMaxHealth() > ENEMY_MAX_HEALTH) {
                 ped.setMaxHealth(ENEMY_MAX_HEALTH);
@@ -45,12 +46,17 @@ function loop() {
             }
         }
 
+        // Limit armor
         if (ENEMY_MAX_ARMOR > 0) {
             let armor = ped.getArmor();
             if (armor > ENEMY_MAX_ARMOR) {
                 armor = ENEMY_MAX_ARMOR - armor;
                 ped.addArmor(armor);
             }
+        }
+
+        if (ENEMY_DAMAGEABLE_BY_NPCS) {
+            ped.setOnlyDamagedByPlayer(false);
         }
     }
 
