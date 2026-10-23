@@ -13,7 +13,7 @@ let lastArmorStatus = false;
 // noinspection InfiniteLoopJS
 while (true) {
     if (DEVMODE && Pad.IsKeyUp(KeyCode.N)) {
-        playerChar.addArmor(200);
+        playerChar.addArmor(50);
     }
     else if (DEVMODE && Pad.IsKeyUp(KeyCode.M)) {
         try {
@@ -21,7 +21,7 @@ while (true) {
         } catch (e) {}
     }
 
-    wait(1000);
+    wait(DEVMODE ? 0 : 1000);
 
     // Dead or arrested: skip
     if (!player.isPlaying() || player.isDead()) {
@@ -42,4 +42,6 @@ while (true) {
         // Armor remains
         player.disableSprint(true);
     }
+
+    lastArmorStatus = armorStatus;
 }
