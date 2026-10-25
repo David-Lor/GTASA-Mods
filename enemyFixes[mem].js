@@ -3,13 +3,25 @@
 const ENEMY_ACCURACY = 1;  // 0~100, -1=no mod. Lower=worse accuracy.
 const ENEMY_MAX_HEALTH = 200;  // 0=no mod
 const ENEMY_MAX_ARMOR = 200;  // 0=no mod
-const ENEMY_DAMAGEABLE_BY_NPCS = true;  // true=allow any NPC to damage/kill this NPC
+const ENEMY_DAMAGEABLE_BY_NPCS = true;  // true=allow NPCs to be killed by any other NPC (by default some NPCs are only killable by the player)
 
 const SCAN_RADIUS = 300.0;
 const SCAN_INTERVAL = 250;
 const SAFETY = 128;
 const DEBUG_TARGETING_NPCS = false;
 
+// Peds excluded from these modifications
+const EXCLUDE_PEDS = [
+    269, // smoke (not final mission)
+    270, // sweet
+    271, // ryder
+    290, // rosenberg
+    292, // cesar
+    293, // og loc
+    294, // woozie
+    295, // torino
+    1,   // truth
+];
 
 const player = new Player(0);
 const playerChar = player.getChar();
@@ -27,7 +39,7 @@ function loop() {
         if (!ped) break;
 
         findNext = true;
-        if (ped === playerChar) continue;
+        if (ped === playerChar || EXCLUDE_PEDS.includes(ped.getModel())) continue;
 
         processedPeds.push(ped);
 
