@@ -14,3 +14,4 @@ A compilation of my own GTASA mods, used in my playthrough.
 - [gangwarProvocation](gangwarProvocation%5Bmem%5D.js): increases the gang war provocation threshold, so that starting a gang war is easier.
 - [propertyTaxes](propertyTaxes%5Bmem%5D.js): pay a weekly tax based on the budget spent on properties (houses and businesses). I.e. for $30k pay ~$300 weekly (includes a jitter to randomize the value a bit).
 - [costDrivingSchool](costDrivingSchool%5Bmem%5D.js): each session of the driving school costs $500 (driving, bike, boat and fly schools).
+- [truckingFix](truckingFix.ts): press d-pad Right + A to unlock the doors of the nearest truck, and detach its trailer. This allows reusing the truck used on a Trucking side mission.
