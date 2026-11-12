@@ -16,3 +16,4 @@ A compilation of my own GTASA mods, used in my playthrough.
 - [costDrivingSchool](costDrivingSchool%5Bmem%5D.js): each session of the driving school costs $500 (driving, bike, boat and fly schools).
 - [truckingFix](truckingFix.ts): press d-pad Right + A to unlock the doors of the nearest truck, and detach its trailer. This allows reusing the truck used on a Trucking side mission.
 - [exitCarUnarmed](exitCarUnarmed.js): do not exit vehicles with a gun in your hand.
+- [zeroRcFix](zeroRcFix%5Bmem%5D.js): fix for Zero's final mission (New Model Army), where the RC Bandit helicopter cannot go down properly. Use D-Pad Up/Down to go up/down.
